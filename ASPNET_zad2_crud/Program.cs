@@ -28,7 +28,7 @@ namespace ASPNET_zad2_crud
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Film}/{action=Index}/{id?}");
 
             app.Run();
         }
