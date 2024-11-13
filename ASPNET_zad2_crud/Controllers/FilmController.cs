@@ -49,16 +49,13 @@ namespace ASPNET_zad2_crud.Controllers
         // POST: FilmController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Film film)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Film film1 = films.FirstOrDefault(x => x.Id == id);
+            film1.Name = film.Name;
+            film1.Description = film.Description;
+            film1.Price = film.Price;
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: FilmController/Delete/5
